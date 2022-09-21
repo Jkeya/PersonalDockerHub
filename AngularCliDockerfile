@@ -1,10 +1,13 @@
 FROM ubuntu
+WORKDIR /usr/src/
+COPY package.json .
 RUN apt-get update && \
-    apt-get install curl vim -y && \
+    apt-get install curl vim python2 make -y && \
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash && \
     export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" && \
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && \
     export NVM_DIR="$HOME/.nvm" && \
-    nvm install 18 && \
-    nvm use 18 && \
-    npm install -g @angular/cli
+    nvm install 14 && \
+    nvm use 14 && \
+    npm install -g @angular/cli && \
+    npm install
