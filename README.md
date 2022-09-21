@@ -18,6 +18,10 @@ docker build -t angular_cli:latest -f AngularCliDockerfile .
 # docker run command
 docker run -it --rm --name "angular_deep_dive" -v $(pwd):/usr/src/ -p 4200:4200 angular_cli
 
+# on windows pc
+# open powershell as administrator 
+# docker run -it --rm --name "angular_deep_dive" -v ${pwd}:/usr/src/ -p 4200:4200 angular_cli
+
 # docker start command (if --rm excluded earlier)
 docker start -i angular_deep_dive
 ```
